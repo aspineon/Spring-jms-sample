@@ -1,5 +1,6 @@
 Spring JMS Examples 
 ===================
+转自github
 
 =====
 #demo project is how to use the base APIs.
@@ -38,16 +39,16 @@ asynchronous examples.
 #### Run the Consumer for the `MessageListener` Example ####
 
     $ cd ./async/message-listener
-    $
+    $ mvn -Pconsumer exec:java
 
 #### Run the Producer for the `SessionAwareMessageListener` Example ####
 
-    $ cd ./async/message-listener
+    $ cd ./async/session-aware-message-listener
     $ mvn -Pproducer exec:java
 
 #### Run the Consumer for the `SessionAwareMessageListener` Example ####
 
-    $ cd ./async/message-listener
+    $ cd ./async/session-aware-message-listener
     $ mvn -Pconsumer exec:java
 
 #### Run the Producer for the `MessageListenerAdapter` Example ####
@@ -56,7 +57,7 @@ destination name and the second one for the message type. The destination name
 should be either FOO.TEST or FOO.TEST2. The message type should text, bytes,
 map or object. Below is an example of text: 
 
-    $ cd ./async/message-listener
+    $ cd ./async/message-listener-adapter
     $ mvn -Pproducer exec:java -Dexec.args="FOO.TEST2 text"
 
 These arguments allow you to invoke one of two `MessageListenerAdapter`
@@ -64,7 +65,7 @@ examples and to send four different types of messages.
 
 #### Run the Consumer for the `MessageListenerAdapter` Example ####
 
-    $ cd ./async/message-listener
+    $ cd ./async/message-listener-adapter
     $ mvn -Pconsumer exec:java
 
 
@@ -91,16 +92,6 @@ argument when starting up the producer as shown below:
     $ cd ./sync/jms-template
     $ mvn -Pproducer exec:java -DsendType=convertAndSend
 
-Summary
--------
-If you have any questions about these examples, please create an issue for the
-project. This will allow everyone to see all questions and answers and it will
-notify me when folks enter new issues. 
 
-I also blog about JMS occasionally. Here are some popular posts I have
-written about Spring JMS: 
 
-* [Using Spring to Send JMS Messages](http://bsnyderblog.blogspot.com/2010/02/using-spring-jmstemplate-to-send-jms.html)
-* [Using Spring to Receive JMS Messages](http://bsnyderblog.blogspot.com/2010/02/using-spring-to-receive-jms-messages.html)
-* [Tuning JMS Message Consumption In Spring](http://bsnyderblog.blogspot.com/2010/05/tuning-jms-message-consumption-in.html)
 
